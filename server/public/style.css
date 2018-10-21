@@ -14,6 +14,7 @@ h2 {
     font-weight: bold;
     font-size: 150px;
     text-transform: uppercase;
+    transform: rotate(-10deg);
 }
 
 .completed {
