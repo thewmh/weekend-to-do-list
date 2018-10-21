@@ -47,7 +47,7 @@ pool.on('error', () => {
 // GET Route
 
 toDoRouter.get('/', (req, res) => {
-    const sqlText = 'SELECT * FROM to_do_list ORDER BY id;';
+    const sqlText = 'SELECT * FROM to_do_list ORDER BY completed ASC;';
     pool.query(sqlText)
         .then((result) => {
             res.send(result.rows);
