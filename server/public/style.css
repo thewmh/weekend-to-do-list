@@ -1,0 +1,28 @@
+.head-color {
+    background-color: aquamarine;
+    color: #ffffff;
+    text-align: center;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 150px;
+    text-transform: uppercase;
+}
+
+.completed {
+    color: red;
+    text-decoration: line-through solid red;
+    font-style: oblique;
+}
+
+.task_desc {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.btn-completedTask {
+    background-color: transparent;
+}
