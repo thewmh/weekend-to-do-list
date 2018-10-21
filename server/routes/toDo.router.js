@@ -15,11 +15,11 @@ if (process.env.DATABASE_URL) {
     const auth = params.auth.split(':');
 
     config = {
-        user: '',
-        password: '',
-        host: '',
-        port: '',
-        database: '',
+        user: auth[0],
+        password: auth[1],
+        host: params.hostname,
+        port: params.port,
+        database: params.pathname.split('/')[1],
         ssl: true,
         max: 10,
         idleTimeoutMillis: 30000,
@@ -34,14 +34,14 @@ if (process.env.DATABASE_URL) {
     }
 }
 
-const pool = new Pool(config);
+const pool = new pg.Pool(config);
 
 pool.on('connect', () => {
     console.log('connected to the database');
 });
 
-pool.on('error', () => {
-    console.log('error connecting to the database', error);
+pool.on('error', (err) => {
+    console.log('error connecting to the database', err);
 });
 
 // GET Route
@@ -73,7 +73,7 @@ toDoRouter.post('/', (req, res) => {
     })
 })
 
-// PUT Route
+// PUT Route to set task to complete
 
 toDoRouter.put('/:id', (req, res) => {
     let toDoID = req.params.id;
