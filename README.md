@@ -47,7 +47,7 @@ For each of your strech goals, you will be practicing git branching. Please refe
 
 - `feature-styling-bootstrap` 
 
-    - [ ]  Add Bootstrap to the front end and style it up!
+    - [√]  Add Bootstrap to the front end and style it up!
      -  Buttons
      -  Cards
      -  Jumbotron
@@ -58,4 +58,4 @@ For each of your strech goals, you will be practicing git branching. Please refe
 
 - `feature-completed-task-ordering` 
 
-    - [ ]  Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
+    - [√]  Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
