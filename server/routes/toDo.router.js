@@ -93,6 +93,19 @@ toDoRouter.put('/:id', (req, res) => {
 
 // DELETE Route
 
-
+toDoRouter.delete('/:id', (req, res) => {
+    let toDoID = req.params.id;
+    let toDoEdit = req.body;
+    let sqlText = `DELETE FROM to_do_list WHERE id=$1;`;
+    pool.query(sqlText, [toDoID])
+    .then((result) => {
+        console.log(`Deleted ${toDoID} from the list`);
+        res.sendStatus(200);
+    })
+    .catch((error) => {
+        console.log(`There was an error deleting ${toDoID} from the list`);
+        res.sendStatus(500);
+    })
+})
 
 module.exports = toDoRouter;

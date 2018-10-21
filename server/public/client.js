@@ -13,6 +13,7 @@ function onReady() {
 // setup clickListeners
 
 function clickListeners(){
+    // add to-do to the list
     $('#btn-addToDo').on('click', function(){
         console.log('in Add To Do Button');
         let task = $('#in-addToDo').val();
@@ -28,6 +29,13 @@ function clickListeners(){
         toDoID = $(this).closest('tr').data('id');
         console.log(toDoID);
         markToDoComplete( toDoID );
+    })
+    $('#showToDoList').on('click', '.btn-deleteTask', function(event){
+        event.preventDefault();
+        console.log('clicked .btn-deleteTask');
+        toDoID = $(this).closest('tr').data('id');
+        console.log(toDoID);
+        deleteToDoItem( toDoID );
     })
 }
 
@@ -46,13 +54,13 @@ function getToDoList() {
         if (todo.completed === '1'){
         newToDo = $(`
         <tr>
-        <td class="task_desc">${todo.task_desc}</td><td><button class="btn btn-completedTask" type="button" onclick="return false">Task Complete</button></td><td><button class="btn btn-danger deleteTask" type="button">Delete Task</button></td>
+        <td class="task_desc">${todo.task_desc}</td><td><button class="btn btn-completedTask" type="button" onclick="return false">Task Complete</button></td><td><button class="btn btn-danger btn-deleteTask" type="button">Delete Task</button></td>
         </tr>
         `)
         } else {
             newToDo = $(`
             <tr>
-            <td class="task_desc">${todo.task_desc}</td><td><button class="btn btn-success btn-completeTask" type="button" onclick="return false">Mark Complete</button></td><td><button class="btn btn-danger deleteTask" type="button">Delete Task</button></td>
+            <td class="task_desc">${todo.task_desc}</td><td><button class="btn btn-success btn-completeTask" type="button" onclick="return false">Mark Complete</button></td><td><button class="btn btn-danger btn-deleteTask" type="button">Delete Task</button></td>
             </tr>
             `)  
         }
@@ -100,7 +108,7 @@ function markToDoComplete( toDoID ) {
             completed: '1'
         }
     }).then(function(response) {
-        console.log('updated status of to-do list item to complete', response);
+        console.log('Updated status of to-do list item to complete', response);
         getToDoList();
     }).catch(function(error) {
         console.log('There was an error marking the to-do list item as complete', error);
@@ -114,5 +122,10 @@ function deleteToDoItem( toDoID ) {
     $.ajax({
         method: 'DELETE',
         url: `/to-do/${toDoID}`
+    }).then(function(response) {
+        console.log('The to-do has been deleted from the list', response);
+        getToDoList();
+    }).catch(function(error) {
+        console.log('There was an error deleting the to-do from the list', error);
     })
-}
+} // end DELETE for to_do_list
