@@ -1,7 +1,13 @@
+body {
+    padding-top: 350px;
+}
+
 .head-color {
-    background-color: aquamarine;
-    color: #ffffff;
+    background-color: transparent;
+    color: transparent;
     text-align: center;
+    text-shadow: 6px -6px rgba(255,0,0,.8),
+                 -6px 6px rgba(0,255,255,.8);
 }
 
 h2 {
@@ -12,7 +18,7 @@ h2 {
 
 .completed {
     color: red;
-    text-decoration: line-through solid red;
+    text-decoration: red wavy line-through;
     font-style: oblique;
 }
 
@@ -25,4 +31,15 @@ h2 {
 
 .btn-completedTask {
     background-color: transparent;
+}
+
+/* .table-hover {
+    color: #fff;
+} */
+
+.btn-light {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
