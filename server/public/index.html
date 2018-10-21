@@ -11,14 +11,16 @@
     <script src="client.js"></script>
 </head>
 <body>
-    <div class="head-color jumbotron">
+    <div class="head-color jumbotron fixed-top">
         <h2>Weekend To Do App</h2>
+        <div class="container">
+            <div class="input-group">
+                <input id="in-addToDo" placeholder="Add New To-Do" class="form-control">
+                <button id="btn-addToDo" class="btn btn-light">Add New To-Do</button>
+            </div>
+        </div>
     </div>
     <div class="container">
-        <div class="input-group">
-            <input id="in-addToDo" placeholder="Add New To-Do" class="form-control">
-            <button id="btn-addToDo" class="btn btn-outline-secondary">Add New To-Do</button>
-        </div>
     <div>
         <table class="table table-borderless table-hover">
             <tbody id="showToDoList">

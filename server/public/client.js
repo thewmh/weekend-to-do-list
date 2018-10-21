@@ -14,7 +14,8 @@ function onReady() {
 
 function clickListeners(){
     // add to-do to the list
-    $('#btn-addToDo').on('click', function(){
+    $('#btn-addToDo').on('click', function(event){
+        event.preventDefault();
         console.log('in Add To Do Button');
         let task = $('#in-addToDo').val();
         let newToDo = {
