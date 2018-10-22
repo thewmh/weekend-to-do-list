@@ -31,6 +31,7 @@ h2 {
     width: 200px;
     height: 20px;
     background-color: #fff;
+    border: none;
 }
 
 .task_desc {
@@ -83,15 +84,15 @@ tr {
 }
 
 .btn-danger {
-    color: #000;
-    background-color: #ff1d32;
-    border-color: #000;
+    color: #ff1d32;
+    background-color: #000;
+    border-color: #ff1d32;
 }
 
 .btn-danger:hover {
     color: #000;
     background-color: #ff1d32;
-    border-color: rgb(255, 29, 50);
+    border-color: #000;
 }
 
 .btn-light {
