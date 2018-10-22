@@ -14,7 +14,7 @@ h2 {
     font-weight: bold;
     font-size: 150px;
     text-transform: uppercase;
-    transform: rotate(-10deg);
+    transform: rotate(10deg);
 }
 
 .container {
@@ -32,6 +32,7 @@ h2 {
     height: 20px;
     background-color: #fff;
     border: none;
+    margin-left: auto;
 }
 
 .task_desc {
