@@ -68,7 +68,8 @@ tr {
 
 
 .btn-completedTask {
-    background-color: transparent;
+    background-color: #00ff2b;
+    color: #000;
 }
 
 .btn-success {
