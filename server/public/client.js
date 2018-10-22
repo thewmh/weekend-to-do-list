@@ -55,6 +55,7 @@ if ($("link[id='toggle-style']").attr('href') === './style.css'){
     $('#btn-style').append(`<div class="css_toggle css-light"></div>`);
   } else { 
     $("link[id='toggle-style']").attr('href', './style.css');
+    console.log('Switching to light');
     $('#btn-style').empty();
     $('#btn-style').append(`<div class="css_toggle css-dark"></div>`);
     
