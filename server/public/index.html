@@ -6,12 +6,16 @@
     <title>Weekend To Do App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./vendors/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" id="toggle-style" href="style.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="style-invert.css" /> -->
     <script src="./vendors/jquery.min.js"></script>
     <script src="client.js"></script>
 </head>
 <body>
     <div class="head-color jumbotron">
+            <div id="btn-style" class="container">
+                <button class="css_toggle css-dark"></button>
+            </div>
         <h2>Weekend To Do App</h2>
         <div class="container">
             <div class="input-group">
@@ -22,7 +26,7 @@
     </div>
     <div class="container">
     <div>
-        <table class="table table-borderless table-hover">
+        <table class="table table-borderless">
             <tbody id="showToDoList">
             </tbody>
         </table>

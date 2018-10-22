@@ -8,7 +8,9 @@ function onReady() {
     console.log('JQ');
     clickListeners();
     getToDoList();
+    switchCss();
 } // end dependency checks
+
 
 // setup clickListeners
 
@@ -38,6 +40,25 @@ function clickListeners(){
         console.log(toDoID);
         deleteToDoItem( toDoID );
     })
+    $('#btn-style').on('click', '.css_toggle', function (event) {
+        event.preventDefault();
+        switchCss();
+      });
+
+}
+
+function switchCss() {
+if ($("link[id='toggle-style']").attr('href') === './style.css'){
+    $("link[id='toggle-style']").attr('href', './style-invert.css');
+    console.log('Switching to dark');
+    $('#btn-style').empty();
+    $('#btn-style').append(`<button class="css_toggle css-light"></button>`);
+  } else { 
+    $("link[id='toggle-style']").attr('href', './style.css');
+    $('#btn-style').empty();
+    $('#btn-style').append(`<button class="css_toggle css-dark"></button>`);
+    
+  }
 }
 
 // GET for to_do_list
