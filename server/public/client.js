@@ -52,11 +52,11 @@ if ($("link[id='toggle-style']").attr('href') === './style.css'){
     $("link[id='toggle-style']").attr('href', './style-invert.css');
     console.log('Switching to dark');
     $('#btn-style').empty();
-    $('#btn-style').append(`<button class="css_toggle css-light"></button>`);
+    $('#btn-style').append(`<div class="css_toggle css-light"></div>`);
   } else { 
     $("link[id='toggle-style']").attr('href', './style.css');
     $('#btn-style').empty();
-    $('#btn-style').append(`<button class="css_toggle css-dark"></button>`);
+    $('#btn-style').append(`<div class="css_toggle css-dark"></div>`);
     
   }
 }
